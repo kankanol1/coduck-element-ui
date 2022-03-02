@@ -1,4 +1,7 @@
 {
+
+  "c-row": "./packages/c-row/index.js",
+  "c-col": "./packages/c-col/index.js",
   "pagination": "./packages/pagination/index.js",
   "dialog": "./packages/dialog/index.js",
   "autocomplete": "./packages/autocomplete/index.js",

@@ -41,6 +41,15 @@
       "name": "组件",
       "groups": [
         {
+          "groupName": "Coduck",
+          "list": [
+            {
+              "path": "/c-layout",
+              "title": "Layout 布局"
+            }
+          ]
+        },
+        {
           "groupName": "Basic",
           "list": [
             {
