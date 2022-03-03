@@ -20,7 +20,8 @@
     'borderExtraLight': '$--border-color-extra-light'
   };
   const original = {
-    primary: '#409EFF',
+    // primary: '#409EFF',
+    primary: '#f5c319',
     success: '#67C23A',
     warning: '#E6A23C',
     danger: '#F56C6C',
@@ -55,6 +56,7 @@
     },
     data() {
       return {
+        color1: '#f5c319',
         global: {},
         primary: '',
         success: '',
@@ -92,16 +94,16 @@
 
 ## Color 色彩
 
-Element 为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
+为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
 
 ### 主色
 
-Element 主要品牌颜色是鲜艳、友好的蓝色。
+系统主题颜色是:<span style='margin-left:4px;vertical-align:middle;display:inline-block;width:100px;height:20px;background:#f5c319'></span>
 
 <el-row :gutter="12">
   <el-col :span="10" :xs="{span: 12}">
     <div class="demo-color-box" :style="{ background: primary }">Brand Color
-      <div class="value">#409EFF</div>
+      <div class="value">#f5c319</div>
       <div class="bg-color-sub" :style="{ background: tintColor(primary, 0.9) }">
         <div
           class="bg-blue-sub-item"
@@ -189,6 +191,23 @@ Element 主要品牌颜色是鲜艳、友好的蓝色。
   </el-col>
 </el-row>
 
+### 自定义
+如果上面的色板不能满足你的需求，你可以选择一个主色，色彩生成算法会为你生成完整的色板。
+
+<el-row :gutter="12">
+  <el-col :span='3'  :key="key" v-for="(item, key) in Array(8)" :style="{ background: tintColor(color1, (key + 1) / 10) }">
+      <!-- <div class="bg-color-sub" :style="{ background: tintColor(color1, 0.9) }"> -->
+        <div style="height: 100px;text-align:center;line-height:100px">{{tintColor(color1, (key + 1) / 10) }}</div>
+      <!-- </div> -->
+  </el-col>
+</el-row>
+
+
+<div class="block" style="line-height:40px;margin-top:20px;vertical-align:middle">
+  <el-color-picker v-model="color1" style='margin-right: 10px;vertical-align:middle'></el-color-picker>{{color1}}
+</div>
+
+
 ### 中性色
 
 中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。
@@ -242,3 +261,4 @@ Element 主要品牌颜色是鲜艳、友好的蓝色。
     </div>
   </el-col>
 </el-row>
+
